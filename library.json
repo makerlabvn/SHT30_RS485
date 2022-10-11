@@ -1,0 +1,15 @@
+{
+  "name": "SHTC3_RS485",
+  "keywords": "sht, shtc3, hshop,hshopvn",
+  "description": "A library for communicating with Pzem004T module",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/makerlabvn/SHTC3_RS485.git"
+  },
+  "frameworks": "arduino",
+  "platforms":
+  [
+    "atmelavr"
+  ]
+}
