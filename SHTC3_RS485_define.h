@@ -9,19 +9,22 @@
 #define MIN_PZEM_TIMEOUT      (100) //ms
 
 #define SHT3C_RS485_CONVERT(low,high)        (((high<<8) + low) * SHT3C_RS485_SCALE)
-#define SHT3C_RS485_GET_VALUE(unit)       (float)(SHT3C_RS485_CONVERT(myBuf[_##unit##_L__], myBuf[_##unit##_H__]))
+#define SHT3C_RS485_GET_VALUE(unit)       (float)(SHT3C_RS485_CONVERT(myBuf[_SHT3C_RS485_##unit##_L__], myBuf[_SHT3C_RS485_##unit##_H__]))
+
+#define _SHT3C_RS485_RESPONSE_SIZE_GETADDR    7
+#define _SHT3C_RS485_RESPONSE_SIZE_SETADDR    8
 
 enum{
   _SHT3C_RS485_address__ = 0,
   _SHT3C_RS485_funnctionCode__,
   _SHT3C_RS485_numOfByteValid__,
-  _humidity_H__,
-  _humidity_L__,
-  _temperature_H__,
-  _temperature_L__,
-  _crc_H__,
-  _crc_L__,
-  RESPONSE_SIZE
+  _SHT3C_RS485_humidity_H__,
+  _SHT3C_RS485_humidity_L__,
+  _SHT3C_RS485_temperature_H__,
+  _SHT3C_RS485_temperature_L__,
+  _SHT3C_RS485_crc_H__,
+  _SHT3C_RS485_crc_L__,
+  _SHT3C_RS485_RESPONSE_SIZE_GETDATA
 };
 
 typedef struct SHTC3_RS485_info{

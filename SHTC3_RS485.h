@@ -50,6 +50,13 @@ class SHTC3_RS485{
     void setTimeout(unsigned int _ui_timeOut);
 
     SHTC3_RS485_info getData();
+
+    uint16_t ModRTU_CRC(byte * buf, int len);
+
+    uint8_t getAddress();
+    bool setAddress(uint8_t fromAddr_, uint8_t toAddr_);
+    SHTC3_RS485_info getData(uint8_t address_);
+    
 };
 
 #endif
