@@ -22,8 +22,8 @@ enum{
   _SHT3C_RS485_humidity_L__,
   _SHT3C_RS485_temperature_H__,
   _SHT3C_RS485_temperature_L__,
-  _SHT3C_RS485_crc_H__,
   _SHT3C_RS485_crc_L__,
+  _SHT3C_RS485_crc_H__,
   _SHT3C_RS485_RESPONSE_SIZE_GETDATA
 };
 

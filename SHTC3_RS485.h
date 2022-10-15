@@ -35,26 +35,86 @@ class SHTC3_RS485{
     void begin(unsigned long _tembaud);
     
   public:
-     SHTC3_RS485();
+    /**
+     * @brief Construct a new shtc3 rs485 object
+     * 
+     */
+    SHTC3_RS485();
 
+    /**
+     * @brief Destroy the shtc3 rs485 object
+     * 
+     */
     virtual ~SHTC3_RS485(){}
 
+    /**
+     * @brief Construct a new shtc3 rs485 object
+     * 
+     * @param serial 
+     */
     SHTC3_RS485(HardwareSerial * serial);
 
+    /**
+     * @brief Construct a new shtc3 rs485 object
+     * 
+     * @param serial 
+     */
     SHTC3_RS485(SoftwareSerial * serial);
 
     SHTC3_RS485(int rxPin, int txPin);
     
+    /**
+     * @brief 
+     * 
+     */
     void begin();
 
+    /**
+     * @brief Set the Timeout object
+     * 
+     * @param _ui_timeOut 
+     */
     void setTimeout(unsigned int _ui_timeOut);
 
+    /**
+     * @brief Get the Data object
+     * 
+     * @return SHTC3_RS485_info 
+     */
     SHTC3_RS485_info getData();
 
+    /**
+     * @brief 
+     * 
+     * @param buf 
+     * @param len 
+     * @return uint16_t 
+     */
     uint16_t ModRTU_CRC(byte * buf, int len);
 
+    /**
+     * @brief Get the Address object
+     * 
+     * @return uint8_t 
+     */
     uint8_t getAddress();
+
+    /**
+     * @brief Set the Address object
+     * 
+     * @param fromAddr_ 
+     * @param toAddr_ 
+     * @return true 
+     * @return false 
+     */
     bool setAddress(uint8_t fromAddr_, uint8_t toAddr_);
+
+    /**
+     * @brief Get the Data object
+     * 
+     * @param address_ 
+     * @return SHTC3_RS485_info 
+     */
     SHTC3_RS485_info getData(uint8_t address_);
     
 };
